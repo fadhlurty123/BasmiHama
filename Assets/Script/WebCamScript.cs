@@ -33,7 +33,7 @@ public class WebCamScript : MonoBehaviour
         GameObject bullet = Instantiate(Resource.Load("bullet", typeof(GameObject))) as GameObject;
         Rigidbody rb = bullet.getComponent<Rigidbody>();
         bullet.transform.rotation = Camera.main.transform.rotation;
-        ullet.transform.position = Camera.main.transform.position;
+        bullet.transform.position = Camera.main.transform.position;
         rb.Addforce(Camera.main.transport.forward = 500f);
         Destroy(bullet, 3);
     }
