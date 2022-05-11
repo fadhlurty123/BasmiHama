@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WebCamScript : MonoBehaviour
 {
     public GameObject webCameraPlane;
+    public GameObject sprayButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,22 @@ public class WebCamScript : MonoBehaviour
 
         Input.gyro.enabled = true;
 
+        gameObject.GetComponent<Button>().onClick.AddListener(OnButtonDown);
+
         WebCamTexture webCameraTexture = new WebCamTexture();
         webCameraPlane.GetComponent<MeshRenderer>().material.mainTexture = webCameraTexture;
         webCameraTexture.Play();
 
+    }
+
+    void OnButtonDown()
+    {
+        GameObject bullet = Instantiate(Resource.Load("bullet", typeof(GameObject))) as GameObject;
+        Rigidbody rb = bullet.getComponent<Rigidbody>();
+        bullet.transform.rotation = Camera.main.transform.rotation;
+        ullet.transform.position = Camera.main.transform.position;
+        rb.Addforce(Camera.main.transport.forward = 500f);
+        Destroy(bullet, 3);
     }
 
     // Update is called once per frame
