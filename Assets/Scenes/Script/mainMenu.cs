@@ -16,7 +16,22 @@ public class mainMenu : MonoBehaviour
 
     public void Startlevel1()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("level 1");
+    }
+
+    public void Startleve2()
+    {
+        SceneManager.LoadScene("level 2");
+    }
+
+    public void Startleve3()
+    {
+        SceneManager.LoadScene("level 3");
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 
     public void SettingGame()
