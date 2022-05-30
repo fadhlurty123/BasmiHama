@@ -15,7 +15,7 @@ public class enemyScript3 : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(Vector3.right * 20f * Time.deltaTime);
+        transform.Translate(Vector3.right * 10f * Time.deltaTime);
     }
 
     IEnumerator Move()
@@ -24,8 +24,8 @@ public class enemyScript3 : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(0.5f);
-            transform.eulerAngles += new Vector3(0, 90f, 0);
+            yield return new WaitForSeconds(1.5f);
+            transform.eulerAngles += new Vector3(0, 180f, 0);
         }
     }
 }
